@@ -1,0 +1,37 @@
+{
+  "name": "plantuml-file-loader",
+  "version": "1.0.0",
+  "description": "A webpack loader to convert PlantUML source files into image files (for web pages, web-slideshows).",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -R spec test/*test.js",
+    "lint": "eslint --ignore-path .gitignore 'index.js'"
+  },
+  "keywords": [
+    "webpack",
+    "loader",
+    "plantuml",
+    "image conversion",
+    "web-slideshow",
+    "remark",
+    "reveal"
+  ],
+  "author": "Luc Sorel",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "eslint": "^4.10.0",
+    "mocha": "^4.0.1",
+    "webpack": "^3.8.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucsorel/plantuml-file-loader.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lucsorel/plantuml-file-loader/issues"
+  },
+  "engines": {
+    "node": ">=6.11"
+  }
+}
