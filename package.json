@@ -1,6 +1,6 @@
 {
   "name": "plantuml-file-loader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A webpack loader to convert PlantUML source files into image files (for web pages, web-slideshows).",
   "main": "index.js",
   "scripts": {

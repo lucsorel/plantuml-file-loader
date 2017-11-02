@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://en.wikipedia.org/wiki/Markdown" target="_blank">
+  <a href="http://plantuml.com/" target="_blank">
     <img width="116px" height="112px" alt="PlantUML logo" src="http://s.plantuml.com/logoc.png" style="margin-bottom: 40px" vspace="40px" />
   </a>
   <a href="https://github.com/webpack/webpack" target="_blank">
@@ -91,6 +91,7 @@ Unit tests can be run with the `npm test` command.
 Despite these efforts, should you find an issue or spot a vital feature, you are welcome to report bugs and submit code requests!
 
 # Changelog
+* **1.0.1**: link fix in README.md
 * **1.0.0**: initial version
 
 # License
