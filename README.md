@@ -98,6 +98,7 @@ Unit tests can be run with the `npm test` command.
 Despite these efforts, should you find an issue or spot a vital feature, you are welcome to report bugs and submit code requests!
 
 # Changelog
+* 1.0.**3**: screenshot fix
 * 1.0.**2**: added: screenshot of class-diagram slide demo, docker requirements
 * 1.0.**1**: link fix in README.md
 * **1.0.0**: initial version
