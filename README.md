@@ -53,6 +53,13 @@ The `format` can be any of those supported by PlantUML: see the `-t` formats in 
 
 # Use cases
 
+## Requirements
+
+The loader spawns a `docker` container to which it delegates the image conversion. Therefore:
+* [Docker must be installed](https://docs.docker.com/engine/installation/) on your computer
+* the `docker` daemon must be started (eg. `sudo service docker start` or equivalent)
+* on Linux environments: the `docker` command must be runnable as a **non-root** user, see [docker post-installation steps](https://docs.docker.com/engine/installation/linux/linux-postinstall/)
+
 ## Web-based slideshows
 
 Combine this loader with the [markdown-image-loader](https://github.com/lucsorel/markdown-image-loader/blob/master/README.md#web-based-slideshows) to build slideshows based on `markdown` documents. In your markdown file, simply refer to PlantUML source files and they will be converted into images (in SVG format by default, which can be zoomed-in without aliasing).
@@ -82,7 +89,7 @@ The class diagram is as follows:
 
 And the diagram will be displayed as a real image in your slideshow:
 
-![](http://s.plantuml.com/imgp/1c6-class-diagram-004.png)
+![](img/my-class-diagram-slide.png)
 
 # Unit tests
 
@@ -91,7 +98,8 @@ Unit tests can be run with the `npm test` command.
 Despite these efforts, should you find an issue or spot a vital feature, you are welcome to report bugs and submit code requests!
 
 # Changelog
-* **1.0.1**: link fix in README.md
+* 1.0.**2**: added: screenshot of class-diagram slide demo, docker requirements
+* 1.0.**1**: link fix in README.md
 * **1.0.0**: initial version
 
 # License
