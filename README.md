@@ -98,13 +98,14 @@ Unit tests can be run with the `npm test` command.
 Despite these efforts, should you find an issue or spot a vital feature, you are welcome to report bugs and submit code requests!
 
 # Changelog
+* **2.0.0**: updated for webpack 4.x (see modifications done on [the loader's option and context](https://medium.com/webpack/webpack-4-migration-guide-for-plugins-loaders-20a79b927202))
 * 1.0.**3**: screenshot fix
 * 1.0.**2**: added: screenshot of class-diagram slide demo, docker requirements
 * 1.0.**1**: link fix in README.md
-* **1.0.0**: initial version
+* **1.0.0**: initial version for webpack 3.x
 
 # License
 
 May be freely distributed under the [MIT license](https://github.com/lucsorel/markdown-image-loader/blob/master/LICENSE).
 
-Copyright (c) 2017 Luc Sorel
+Copyright (c) 2017-2018 Luc Sorel
