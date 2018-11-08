@@ -3,8 +3,6 @@ const childProcess = require('child_process')
 const { PassThrough } = require('stream')
 const { Buffer } = require('buffer')
 
-const LOADER_CONFIG_KEY = 'plantumlFileLoader'
-
 const DEFAULT_CONFIG = {
   publicPath: false,
   outputPath: '',
@@ -24,19 +22,16 @@ module.exports = function PlantUmlFileLoader(plantUmlBuffer = '') {
   this.cacheable && this.cacheable()
 
   // retrieves the optional query parameters and the optional key of the expected configuration
-  let configKey = LOADER_CONFIG_KEY
   let query = {}
   if (this.query) {
     query = loaderUtils.parseQuery(this.query)
-    configKey = query.config || LOADER_CONFIG_KEY
   }
-  const loaderOptions = this.options[configKey] || {}
 
-  // query takes precedence over than loader options and default config
-  const config = Object.assign({}, DEFAULT_CONFIG, loaderOptions, query)
+  // query takes precedence over the default config
+  const config = Object.assign({}, DEFAULT_CONFIG, query)
 
   const url = loaderUtils.interpolateName(this, `${config.outputPath}${config.name}.${config.format}`, {
-    context: config.context || this.options.context,
+    context: config.context || this.rootContext,
     content: plantUmlBuffer,
     regExp: config.regExp
   })

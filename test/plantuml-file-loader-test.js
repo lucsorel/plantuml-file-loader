@@ -37,14 +37,18 @@ describe('plantuml-file-loader tests suite', () => {
 
     const expectedBuffer = fs.readFileSync(path.join(__dirname, 'expected.svg'))
 
-    // removes unique ids in svg documents
-    const sanitizeSvgBuffer = buffer => buffer.toString().replace(/id="[^"]+"/g, '').replace(/"url([^)]+)/g, '')
+    // removes unique ids and XML comments in svg documents
+    const sanitizeSvgBuffer = buffer => buffer.toString()
+      .replace(/id="[^"]+"/g, '')
+      .replace(/url\([^)]+\)/g, '')
+      .replace(/<!--[\s\S]*?-->/gm, '')
+      .trim()
 
     Promise.all([onCallbackPromise, onEmitFilePromise]).then(
       ([{ webpackExport }, { url, buffer }]) => {
         assert.equal(webpackExport, 'module.exports = __webpack_public_path__ + "c961d3f899f1fca584ab9aaea509f965.svg";')
         assert.equal(url, 'c961d3f899f1fca584ab9aaea509f965.svg')
-        assert.equal(sanitizeSvgBuffer(expectedBuffer), sanitizeSvgBuffer(buffer))
+        assert.equal(sanitizeSvgBuffer(buffer), sanitizeSvgBuffer(expectedBuffer))
         done()
       }
     ).catch(error => done(error))
